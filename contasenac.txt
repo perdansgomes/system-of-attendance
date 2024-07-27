@@ -1,0 +1,3 @@
+conta: senac.recuperasenha@gmail.com
+senha: y01012001
+senha app: cvnnbgqrhokympnx

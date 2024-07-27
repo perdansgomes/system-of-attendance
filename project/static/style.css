@@ -1,0 +1,147 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+font-family: 'Roboto';
+font-size: 15px;
+}
+
+
+@font-face{
+font-family: 'Roboto';
+src: url('Roboto-Regular.ttf') format('opentype');
+}
+
+.slider {
+  width: 100%;
+  height: 657px;
+  position: relative;
+  overflow: hidden;
+}
+
+.slider img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  position: fixed;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slider img.active {
+  opacity: 1;
+}
+
+#senac_logo{
+width: 100px;
+position: absolute;
+right: 90%;
+margin: 0.5px;
+}
+
+
+.container1{
+height: 100% ;
+width: 40px;
+position: fixed;
+top: 0;
+left: 0;
+background-color: rgba(0, 0, 0, 0.8);
+transition: width 0.3s;
+}
+
+.container1:hover{
+width: 180px;
+}
+
+.sidebar_title{
+margin-left: 10px;
+white-space: nowrap;
+overflow: hidden;
+transition: opacity 0.3s;
+opacity: 0;
+position: relative;
+right: 1px;
+top: 12px;
+}
+
+.sidebar_conteudo{
+  display: flex;
+  align-items: center;
+  height: 60px;
+  cursor: pointer;
+}
+
+.sidebar_img{
+margin-left: 10px;
+white-space: nowrap;
+overflow: hidden;
+transition: opacity 0.3s;
+opacity: 0;
+}
+
+.container1:hover .sidebar_title {
+opacity: 1;
+}
+
+.container1:hover .sidebar_img{
+opacity: 1;
+}
+
+.sidebar ul {
+list-style: none;
+
+}
+
+
+.sidebar li {
+display: block;
+text-decoration: none;
+}
+
+.sidebar a{
+color: white;
+padding: 20px 5px;
+height: 35px;
+text-decoration: none;
+display: block;
+width: 119px;
+}
+
+i{
+padding: 5px;
+}
+
+.sidebar_conteudo:hover{
+background-color:  rgba(0, 0, 0, 0.9);
+}
+
+#senac_logo{
+width: 100px;
+position: absolute;
+right: 40%;
+}
+
+.icon{
+display: fixed;
+top: 0;
+left: 0;
+}
+
+ul{
+margin: 1px;
+display: inline-block;
+}
+
+.menubar{
+margin: 5px;
+display: inline-block;
+}
+
+.expanded {
+width: 500px;
+}

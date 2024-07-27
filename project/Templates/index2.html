@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <title>Cadastre-se</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/e31f944338.js" crossorigin="anonymous"></script>
+  <link href="static/styles_frequencia.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.16/dist/sweetalert2.min.css" rel="stylesheet">
+</head>
+<body>
+  
+<div class="slider">
+
+  <div class="slide">
+      <img src="static/imagem2/giovanni-gagliardi-fvT3t9iOaJI-unsplash.jpg" alt="Imagem 1" >
+  </div>
+
+  <div class="slide">
+      <img src="static/imagem2/inaki-del-olmo-NIJuEQw0RKg-unsplash.jpg" alt="Imagem 2">
+  </div>
+
+  <div class="slide">
+      <img src="static/imagem2/javier-trueba-iQPr1XkF5F0-unsplash.jpg" alt="Imagem 3">
+  </div>
+
+  <div class="slide">
+      <img src="static/imagem2/online-school-6956162_1920.jpg" alt="">
+  </div>
+
+  <div class="slide">
+      <img src="static/imagem2/portrait-smiling-young-beautiful-dark-skinned-curly-student-girl-cafe-terrace-holding-textbooks-wearing-yellow-coat-enjoys-weather (1).jpg" alt="">
+  </div>
+</div>
+</div>
+
+<div class = "container1">
+  <div class = "sidebar">
+      <ul style="list-style-type: none;" >
+              <div class="sidebar_img">
+                  <li><img src="static/senac.png" alt="" id = "senac_logo"></li>
+              </div>
+          <br><br><br><br>
+          
+              <div class="sidebar_conteudo">
+                  <i class="fa-solid fa-house" style="color: #ffffff;"></i>
+                  <div class="menubar">
+                      <li class="sidebar_title"><a href="/pagina_inicial">Home</a></li>
+                  </div>
+              </div>
+         
+              <div class="sidebar_conteudo">
+                  <i class="fa-sharp fa-solid fa-graduation-cap" style="color: #ffffff;"></i>
+                  <div class="menubar">
+                      <li class="sidebar_title"><a href="https://cloud.plataforma.senac.br/senacportalaluno/#/login" target="_blank">Portal do Aluno</a></li>
+                  </div>
+              </div>
+
+              <div class="sidebar_conteudo">
+                  <i class="fa-solid fa-phone" style="color: #ffffff;"></i>
+                  <div class="menubar">
+                      <li class="sidebar_title"><a href="http://www.ma.senac.br/fale-conosco/" target="_blank" rel="next">Contato</a></li>
+                  </div>
+              </div>
+      
+
+              <div class="sidebar_conteudo">
+                <i class="fa-solid fa-key" style="color: #ffffff;"></i>
+                <div class="menubar">
+                      <li class="sidebar_title"><a href="/esqueceu_senha">Esqueceu senha</a></li>
+                  </div>
+              </div>
+       
+              <div class="sidebar_conteudo">
+                  <i class="fa-sharp fa-solid fa-book" style="color: #ffffff;"></i>
+                  <div class="menubar">
+                      <li class="sidebar_title"><a href="http://www.ma.senac.br/curso/" target="_blank">Cursos</a></li>
+                  </div>
+              </div>
+      </ul>
+  </div>
+</div>
+
+  <div class="container">
+    <div class="row justify-content-center" style="margin:20px;">
+      <div class="col-lg-6 col-md-8 login-box">
+        <div class="col-lg-12 login-title">
+          LOGIN
+        </div>
+        <div class="col-lg-12 login-form">
+          <form action="/frequencia" method="post">
+            <div class="form-group">
+              <label class="form-control-label">Matricula</label>
+              <input type="number" name="matricula" class="form-control" required>
+            </div>
+
+            <div style="display: none;">
+              <input type="text" value="{{ result }}" id="result">
+            </div>
+
+            <div style="display: none;">
+              <input type="text" value="{{ alert }}" id="alert">
+            </div>
+            
+            <div class="form-group position-relative">
+              <label class="form-control-label">Senha</label>
+              <input type="password" name="senha" class="form-control" required>
+              <button type="button" class="password-toggle" onclick="togglePasswordVisibility()">
+              </button>
+            </div>
+
+            <div class="col-12 login-btm login-button justify-content-center d-flex">
+              <button type="submit" class="btn btn-outline-primary">Login</button>
+            </div class = "opcao-cadastro">
+                <p>Confirme sua matrícula <a href="/cadastro">Clique aqui</a></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+  <script>
+
+    function togglePasswordVisibility() {
+      var passwordInput = document.querySelector('input[type="password"]');
+      var passwordToggle = document.querySelector('.password-toggle');
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        passwordToggle.innerHTML = '<i class="fas fa-eye-slash"></i>';
+      } else {
+        passwordInput.type = 'password';
+        passwordToggle.innerHTML = '<i class="fas fa-eye"></i>';
+      }
+    }
+  </script>
+  <script src="static/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.16/dist/sweetalert2.all.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <title>Confirmar matricula</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/e31f944338.js" crossorigin="anonymous"></script>
+  <link href="static/cadastro_frequencia.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.16/dist/sweetalert2.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="slider">
+
+  <div class="slide">
+      <img src="static/imagem2/giovanni-gagliardi-fvT3t9iOaJI-unsplash.jpg" alt="Imagem 1" >
+  </div>
+
+  <div class="slide">
+      <img src="static/imagem2/inaki-del-olmo-NIJuEQw0RKg-unsplash.jpg" alt="Imagem 2">
+  </div>
+
+  <div class="slide">
+      <img src="static/imagem2/javier-trueba-iQPr1XkF5F0-unsplash.jpg" alt="Imagem 3">
+  </div>
+
+  <div class="slide">
+      <img src="static/imagem2/online-school-6956162_1920.jpg" alt="">
+  </div>
+
+  <div class="slide">
+      <img src="static/imagem2/portrait-smiling-young-beautiful-dark-skinned-curly-student-girl-cafe-terrace-holding-textbooks-wearing-yellow-coat-enjoys-weather (1).jpg" alt="">
+  </div>
+</div>
+</div>
+
+<div class = "container1">
+  <div class = "sidebar">
+      <ul style="list-style-type: none;" >
+              <div class="sidebar_img">
+                  <li><img src="static/senac.png" alt="" id = "senac_logo"></li>
+              </div>
+          <br><br><br><br>
+          
+              <div class="sidebar_conteudo">
+                  <i class="fa-solid fa-house" style="color: #ffffff;"></i>
+                  <div class="menubar">
+                      <li class="sidebar_title"><a href="/pagina_inicial">Home</a></li>
+                  </div>
+              </div>
+         
+              <div class="sidebar_conteudo">
+                  <i class="fa-sharp fa-solid fa-graduation-cap" style="color: #ffffff;"></i>
+                  <div class="menubar">
+                      <li class="sidebar_title"><a href="https://cloud.plataforma.senac.br/senacportalaluno/#/login" target="_blank">Portal do Aluno</a></li>
+                  </div>
+              </div>
+
+              <div class="sidebar_conteudo">
+                  <i class="fa-solid fa-phone" style="color: #ffffff;"></i>
+                  <div class="menubar">
+                      <li class="sidebar_title"><a href="http://www.ma.senac.br/fale-conosco/" target="_blank" rel="next">Contato</a></li>
+                  </div>
+              </div>
+      
+              <div class="sidebar_conteudo">
+                  <i class="fa-sharp fa-solid fa-book" style="color: #ffffff;"></i>
+                  <div class="menubar">
+                      <li class="sidebar_title"><a href="http://www.ma.senac.br/curso/" target="_blank">Cursos</a></li>
+                  </div>
+              </div>
+      </ul>
+  </div>
+</div>
+
+  <div class="container">
+    <div class="row justify-content-center" style="margin:20px;">
+      <div class="col-lg-6 col-md-8 cadastro-box">
+        <div class="col-lg-12 login-title">
+          Confirmar Matrícula
+        </div>
+        <div class="col-lg-12 login-form">
+          <form action="/cadastrar" method="post">
+            <div class="form-group">
+              <label class="form-control-label">Nome *</label>
+              <input type="text" name="nome"class="form-control" id = "username" required>
+            </div>
+
+            <div style="display: none;">
+              <input type="text" value="{{ result }}" id="result">
+            </div>
+
+            <div style="display: none;">
+              <input type="text" value="{{ alert }}" id="alert">
+            </div>
+
+            <div class="form-group">
+                <label class="form-control-label">Telefone *</label>
+                <input type="text" class="form-control" name="telefone" id="telefone-input" maxlength="15" oninput="formatarTelefone()" required>  
+            </div>
+
+            <div class="form-group">
+                <label class="form-control-label">CPF *</label>
+                <input type="text" class="form-control" name="cpf" id="cpf-input" maxlength="14" oninput="formatarCPF()" required>
+            </div>
+             
+            <div class="form-group position-relative">
+              <label class="form-control-label">Senha *</label>
+              <input type="password" name="senha" class="form-control" id = "senha-input" required>
+              <button type="button" class="password-toggle" onclick="togglePasswordVisibility()">
+              </button>
+            </div>
+
+            <div class="form-group">
+                <label class="form-control-label">Email *</label>
+                <input type="text" name="email" class="form-control" id = "email" required>
+            </div>
+
+            <div class="form-group">
+                <label class="form-control-label">Cursos *</label>
+                <select class="form-control" name="curso" id = "curso-select" required>
+                  <option value="Programador de Sistemas">Programador de Sistemas</option>
+                  <option value="Adm.Banco de Dados">Adm.Banco de Dados</option>
+                  <option value="Adm.de Redes">Adm.de Redes</option>
+                  <option value="Tecnico em Manutenção e Suporte">Tec.Man.Sup</option>
+
+                </select>
+            </div>
+            
+            <div class="col-12 login-btm login-button justify-content-center d-flex">
+              <button type="submit" class="btn btn-outline-primary" onclick="Alerta()">Confirmar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+  <script>
+    function Alerta(){
+      var nome = document.getElementById("username").value;
+      var telefone = document.getElementById("telefone-input").value;
+      var cpf = document.getElementById("cpf-input").value;
+      var senha = document.getElementById("senha-input").value;
+      var email = document.getElementById("email").value;
+      var curso = document.getElementById("curso-select").value;
+
+      if (nome === "" || telefone === "" || cpf === "" || senha === "" || email === "" || curso === "" ) {
+        swal({
+          title: "Olá!",
+          text: "Preencha todos os campos!",
+          icon: "warning",
+          button: "Ok",
+        });
+      }
+    }
+
+    function formatarCPF() {
+      var cpf = document.getElementById('cpf-input').value;
+      cpf = cpf.replace(/\D/g, ''); // Remove caracteres não numéricos
+      cpf = cpf.replace(/(\d{3})(\d)/, '$1.$2'); // Insere o primeiro ponto
+      cpf = cpf.replace(/(\d{3})(\d)/, '$1.$2'); // Insere o segundo ponto
+      cpf = cpf.replace(/(\d{3})(\d{1,2})$/, '$1-$2'); // Insere o hífen
+      document.getElementById('cpf-input').value = cpf;
+    }
+
+    function formatarTelefone() {
+      var telefone = document.getElementById('telefone-input').value;
+      telefone = telefone.replace(/\D/g, ''); // Remove caracteres não numéricos
+      telefone = telefone.replace(/(\d{2})(\d)/, '($1) $2'); // Insere parênteses no DDD
+      telefone = telefone.replace(/(\d{5})(\d)/, '$1-$2'); // Insere o hífen
+      document.getElementById('telefone-input').value = telefone;
+    }
+
+    function togglePasswordVisibility() {
+      var passwordInput = document.querySelector('input[type="password"]');
+      var passwordToggle = document.querySelector('.password-toggle');
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        passwordToggle.innerHTML = '<i class="fas fa-eye-slash"></i>';
+      } else {
+        passwordInput.type = 'password';
+        passwordToggle.innerHTML = '<i class="fas fa-eye"></i>';
+      }
+    }
+  </script>
+  <script src="static/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.16/dist/sweetalert2.all.min.js"></script>
+</body>
+</html>
